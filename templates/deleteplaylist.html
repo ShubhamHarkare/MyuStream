@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="delete-container">
+        <h2 class="text-center mb-4">Delete Song</h2>
+<form action="/deleteplaylist" method="post">
+    <div class="form-group">
+        <label for="selected_song">Select a Song:</label>
+        <select class="form-control" name="selected_song" id="selected_song">
+            {% for song in songs %}
+                <option value="{{ song.id }}">{{ song.name }}</option>
+            {% endfor %}
+        </select>
+    
+    </div>
+    <br>
+    <button class="btn btn-delete" type="submit">Delete Song</button>
+
+</form>
+{{status}}
+
+    </div>
+</div>
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .delete-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .custom-select {
+        width: 100%;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="edit-container">
+        <h2 class="text-center md-4">Edit Lyrics</h1>
+    <form action="/editlyrics" method="post">
+    <label for="selected_song">Select a Song:</label>
+    <div class="form-group">
+        <select class="form-control" name="selected_song" id="selected_song">
+            {% for song in songs %}
+                <option value="{{ song.id }}">{{ song.name }}</option>
+            {% endfor %}
+        </select>
+    
+    </div>
+    <div class="form-group">
+        <label for="edited_lyrics">Edit Lyrics:</label>    <br>
+        <textarea class="form-control" name="edited_lyrics" id="edited_lyrics" rows="10" cols="30"></textarea>
+    
+    </div>
+    <button type="submit" class="btn btn-save btn-block">Update Lyrics</button>
+</form>
+
+{{status}}
+
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .edit-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .custom-select {
+        width: 100%;
+    }
+
+    .song-lyrics {
+        height: 150px;
+    }
+
+    .btn-save {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    .btn-save:hover {
+        background-color: #218838;
+    }
+</style>
+{% endblock %}

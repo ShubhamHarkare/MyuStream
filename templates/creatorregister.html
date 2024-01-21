@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <h1>Register as Creator Here</h1>
+<form action="/creatorregister" method="POST">
+  username: <input type="text" name="u_name" placeholder="Enter username"> <br>
+  password: <input type="password" name="pass" placeholder="Enter password"> <br>
+  <button type="submit">Register Here</button>
+
+
+</form> -->
+<div class="container">
+  <div class="registration-container">
+    <h2 class="text-center mb-4">Register as Creator Here</h2>
+    <form action="/creatorregister" method="POST">
+      <div class="form-group">
+          username: <input class="form-control" type="text" name="u_name" placeholder="Enter username"> <br>
+      </div>
+      <div class="form-group">
+          password: <input class="form-control" type="password" name="pass" placeholder="Enter password"> <br>
+        </div>
+      <button class="btn btn-register btn-block" type="submit">Register Here</button>
+
+      
+    
+    </form>
+    
+    {{ status }}
+</div>
+</div>
+<style>
+  body {
+      background-color: #f8f9fa;
+  }
+
+  .registration-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+      margin-bottom: 20px;
+  }
+
+  .btn-register {
+      background-color: #007bff;
+      color: #fff;
+  }
+
+  .btn-register:hover {
+      background-color: #0056b3;
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Admin Home</h1>
+<p>Number of users in the database -> {{ users }}</p>
+<p>Number of creators in the database -> {{ creators }}</p>
+<p>Average songs rating -> {{average_rating}}</p>
+
+<ol>Top rated songs are-></ol>
+{% for tr in top_rated_songs %}
+<li>{{tr.name}}</li>
+
+{% endfor %}
+
+{% endblock %}

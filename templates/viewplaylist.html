@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<<h1>Playlists and Songs</h1>
+
+{% for playlist in playlists %}
+    <h2>{{ playlist.name }}</h2>
+    <ul>
+        {% for song,path in playlist_songs[playlist.name] %}
+            <li>{{ song }} 
+                {% if path %}
+                <audio controls>
+                    <source src="{{ path }}" type="audio/mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                {% endif %}
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endfor %}{% endblock %}
